@@ -1,4 +1,4 @@
-from ..connection import *
+from .connection import *
 
 def by_last_or_first_name(last_name, first_name):
     cmd.execute("SELECT * FROM students \

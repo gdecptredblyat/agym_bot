@@ -1,6 +1,6 @@
-from .connection import *
+from .utilities.connection import *
 from .utilities import find
-# from utilities import parse_fetch
+
 
 def group(class_name):
     class_name = (class_name, )
@@ -18,6 +18,8 @@ def group(class_name):
         })
 
     return mobiles
+
+
 def person(last_name, first_name):
     person = find.by_last_or_first_name(last_name, first_name)
 

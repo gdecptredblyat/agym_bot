@@ -1,2 +1,2 @@
-from .add_student import *
+from . import student
 from . import get_mobile
