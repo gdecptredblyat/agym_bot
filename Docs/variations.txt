@@ -1,0 +1,1 @@
+1. (id.exists()) ? autopost : sign_up -> autopost
