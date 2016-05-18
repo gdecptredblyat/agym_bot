@@ -1,5 +1,6 @@
 from .utilities.connection import *
 
+
 def add(student_data):
     student_data = tuple(student_data)
 
@@ -31,9 +32,9 @@ def change_data(student_id, new_data):
         add_to_query(column)
 
     # print(sql_query)
-    cmd.execute("UPDATE students SET {query} WHERE telegram_id={id}"\
-        .format(
-            query=sql_query,
-            id=student_id
-        ))
+    cmd.execute("UPDATE students SET {query} WHERE telegram_id={id}"
+                .format(
+                    query=sql_query,
+                    id=student_id
+                ))
     connection.commit()
