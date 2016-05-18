@@ -4,5 +4,7 @@ from Data import replies
 # db.student.add(student_data)
 # db.student.delete(id)
 # db.student.delete(312233)
-db.student.change_data(1, {"first_name": "F_N", "mobile": "100"})
+# db.student.change_data(1, {"first_name": "F_N", "mobile": "100"})
 # print(db.get_mobile.person("LNA","AN_N"))
+# db.homework.add("10i", {"text": "SAMPLETEXT", "subject": "Math"})
+# db.homework.delete("10i", 2)
