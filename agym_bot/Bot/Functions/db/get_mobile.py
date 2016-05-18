@@ -24,7 +24,7 @@ def person(last_name, first_name):
     person = find.by_last_or_first_name(last_name, first_name)
 
     if person:
-        # mobile is last fiels (#fucksql)
+        # mobile is last field (#fucksql)
         return person[-1]
     else:
         # return replies.no_student (TODO)
