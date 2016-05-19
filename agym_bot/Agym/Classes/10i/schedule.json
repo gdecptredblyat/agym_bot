@@ -1,9 +1,0 @@
-{
-    "Monday": "M1",
-    "Tuesday": "T1",
-    "Wensday": "W1",
-    "Thursday": [ ["Английский"], ["Информатика", "Физ-ра"] ],
-    "Friday": "F1",
-    "Saturday": "S1",
-    "Sunday": "S2"
-}
