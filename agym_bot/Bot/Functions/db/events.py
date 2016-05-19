@@ -3,6 +3,8 @@ from .utilities import path
 
 
 def add(class_name, event_data):
+    if isinstance(event_data, str):
+        event_data = {"text": event_data}
     event_path = path.AG + class_name + "/events"
     event_json = json_file.read(event_path)
     if event_json["events"]:
