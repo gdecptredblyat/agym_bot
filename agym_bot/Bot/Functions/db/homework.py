@@ -1,9 +1,9 @@
 from ..utilities import json_file
-path_AG = "../Agym/Classes/"
+from .utilities import path
 
 
 def add(class_name, homework_data):
-    homework_path = path_AG + class_name + "/homework"
+    homework_path = path.AG + class_name + "/homework"
     homework_json = json_file.read(homework_path)
     if homework_json["assignments"]:
         homework_data["id"] = homework_json["assignments"][-1]["id"] + 1
@@ -15,7 +15,7 @@ def add(class_name, homework_data):
 
 
 def delete(class_name, homework_id):
-    homework_path = path_AG + class_name + "/homework"
+    homework_path = path.AG + class_name + "/homework"
     homework_json = json_file.read(homework_path)
 
     to_delete = -1
