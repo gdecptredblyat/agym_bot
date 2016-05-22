@@ -1,8 +1,7 @@
-from Functions import db
-import telebot
-import config
+from Functions import db, reciever
+from Functions.reciever.utilities import *
 
-bot = telebot.TeleBot(config.token)
+bot = bot.bot
 
 
 @bot.message_handler(commands=['start'])
@@ -12,21 +11,28 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['delete_me'])
 def delete_user(message):
-	bot.send_message(message.chat.id, 'ня.пока')
+	bot.send_message(message.chat.id, 'Ваш профиль был удалён из базы данных.')
+	db.student.delete(message.chat.id)
 
 
-@bot.message_handler(commands=['get_number'])
-def get_mobile(message):
-	if message.text:
-		if len(message.text.split(' ')) == 2:
-			db.get_mobile.group(message.text.split(' ')[1])
+@bot.message_handler(commands=['me'])
+def me(message):
+	bot.send_message(message.chat.id, message.chat.id)
 
 
-@bot.message_handler(content_types=['text', 'sticker'])
-def repeat_all_messages(message):
-	if message.text:
-		bot.send_message(message.chat.id, message.text)
-	else:
-		bot.send_message(message.chat.id, ';')
+@bot.message_handler(commands=['add_student'])
+def recive(message):
+	reciever.add_student(message)
+
+
+@bot.message_handler(commands=['get_mobile'])
+def recieve(message):
+	reciever.get_mobile(message)
+
+@bot.message_handler(content_types=['text'])
+def recive(message):
+	if message.chat.id in shared.functions:
+		shared.functions[message.chat.id](message)
+
 
 bot.polling()
