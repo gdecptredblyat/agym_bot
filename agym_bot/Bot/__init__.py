@@ -1,6 +1,6 @@
 from Functions import db
 from Data import replies
-# student_data = [1, "L_NA", "AN_N", "10i", "+7(111)000-00-00"]
+# student_data = [177242941, "Шаршуков", "Владислав", "10i", "89213810829"]
 # db.student.add(student_data)
 # db.student.delete(id)
 # db.student.delete(312233)
@@ -9,4 +9,4 @@ from Data import replies
 # db.homework.add("10i", {"text": "SAMPLETEXT", "subject": "Math"})
 # db.events.add("10i", "All to 258 NOW!!!")
 # db.homework.delete("10i", 2)
-print(db.schedule.get("10i"))
+# print(db.schedule.get("10i"))
